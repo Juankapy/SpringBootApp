@@ -1,6 +1,7 @@
 package com.prueba_thymelaf.Entidad;
 
 public class Producto {
+
     private int id;
     private String nombre;
     private double  precio;
