@@ -6,26 +6,19 @@
 </head>
 <body>
 
-<div th:if="${listaProductos.size()==0}">
-    <h3>No hay productos todavía</h3>
-</div>
+<span class="alert alert-warning" th:if="${listaProductos.size() == 0}">
+		Esto esta vacio
+	</span>
+<div th:unless="${listaProductos.isEmpty()}">
+    <table>
+        <tr th:each=" producto : ${listaProductos}">
 
-    <table border="1">
-        <thead>
-        <tr>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Categoria</th>
+            <td><span th:text="${producto.nombre}"></span></td>
+            <td><span th:text="${producto.precio}"></span></td>
+            <td><span th:text="${producto.categoria}"></span></td>
+            <td><a th:href="@{/productos/{id}(id=${producto.id})}">Ver detalle</a></td>
         </tr>
-        </thead>
-        <tbody>
-        <tr th:each="producto : ${listaProductos}">
-            <td th:text="${producto.nombre}"></td>
-            <td th:text="${producto.precio}"></td>
-            <td th:text="${producto.categoria}"></td>
-        </tr>
-        </tbody>
-    </table>
-
+    </div>
+</table>
 </body>
 </html>

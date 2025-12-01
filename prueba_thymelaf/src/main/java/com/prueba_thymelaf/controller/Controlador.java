@@ -23,7 +23,7 @@ public class Controlador {
     }
 
 
-    @GetMapping
+    @GetMapping ("/saluda")
     public String greeting(
             @RequestParam(required = false,defaultValue = "JuanK") String name, Model model
     ) {
@@ -48,7 +48,7 @@ public class Controlador {
     @GetMapping("/productos/{id}")
     public String obtenerProducto(@PathVariable int id, Model model) {
         model.addAttribute("producto", servicio.obtenerProductoPorId(id));
-        return "vista";
+        return "vistaProducto";
     }
 
 }
