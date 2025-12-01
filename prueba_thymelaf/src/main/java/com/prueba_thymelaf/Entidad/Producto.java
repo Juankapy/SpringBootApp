@@ -13,6 +13,10 @@ public class Producto {
         this.categoria = categoria;
     }
 
+    public Producto() {
+
+    }
+
     public int getId() {
         return id;
     }

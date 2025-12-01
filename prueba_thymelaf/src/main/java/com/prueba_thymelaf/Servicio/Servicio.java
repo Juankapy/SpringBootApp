@@ -9,6 +9,7 @@ import com.prueba_thymelaf.Entidad.Producto;
 @Service
 public class Servicio {
     private List<Producto> listaProductos = new ArrayList<Producto>();
+    private int cont_id = 1;
 
     public Servicio() {
         Producto p1 = new Producto(1, "Pan", 1, "Alimentación");
@@ -17,6 +18,12 @@ public class Servicio {
         listaProductos.add(p1);
         listaProductos.add(p2);
         listaProductos.add(p3);
+    }
+
+
+    public void agregarProducto(Producto p) {
+        p.setId(cont_id++);
+        listaProductos.add(p);
     }
 
 
